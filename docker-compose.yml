@@ -1,0 +1,19 @@
+version: 'latest'
+
+services:
+  db:
+    image: mysql
+    container_name: LowCodeApp
+    environment:
+      MYSQL_ROOT_PASSWORD: root # Change this to your desired password
+      MYSQL_DATABASE: LowCodeDB # Name of the database you want to create
+      MYSQL_USER: examUser
+      MYSQL_PASSWORD: "123123"
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db_data: # This will persist your database data

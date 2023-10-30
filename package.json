@@ -4,6 +4,7 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
+    "docker-up" : "docker-compose up -d",
     "start": "concurrently \"cd lowcodeapp && npm run start\" \"cd lowcodeapp/src/server && node server.js\""
   },
   "devDependencies": {
